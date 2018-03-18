@@ -1,4 +1,5 @@
-import {Component} from 'react'
+
+/*import {Component} from 'react'
 class startEvent extends Component{
     constructor(){
         super()
@@ -27,3 +28,37 @@ class startEvent extends Component{
      }
 }
 export default startEvent
+*/    import {Component} from 'react'
+class Increment extends Component{
+    constructor(){
+        super()
+        this.state={
+            likes: 0,
+            dislike:0
+            
+        }
+        this.increaseLike= this.increaseLike.bind(this);
+        this.increaseDislike=this.increaseDislike.bind(this);
+     }
+
+     increaseLike= () =>{
+         this.setState({
+             likes: this.state.likes + 1
+         })}
+increaseDislike= () =>{
+         this.setState({
+             dislike: this.state.dislike + 1
+         })}
+
+ render(){
+     return(
+         <div>
+             <div>{this.state.likes}
+             <button onClick={this.increaseLike}>Like</button></div>
+             <div>{this.state.dislike}
+             <button onClick={this.increaseDislike}>hate</button></div>
+         </div>
+     )
+ }
+}
+export default Increment
