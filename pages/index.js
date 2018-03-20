@@ -1,6 +1,7 @@
 
-/*import {Component} from 'react'
-class startEvent extends Component{
+/*
+import {Component} from 'react';
+class startEvents extends Component{
     constructor(){
         super()
         this.state={
@@ -13,22 +14,28 @@ class startEvent extends Component{
 
  applyEvent= () =>{
      this.setState({
-    name:'Khan'
-     })}
+         name: 'Khan'
+     })
+    } 
 
      // We can creat a funcion which hold the new value that we want to display after the event accours
 
      render(){
     return(
         <div>
-            <div>{this.state.name}</div>
+            <div>{this.state.name}</div><br/>
             <button onClick={this.applyEvent}>ClickToChange</button>
             </div>
     )
      }
 }
-export default startEvent
-*/    import {Component} from 'react'
+export default startEvents
+*/
+
+
+
+/*
+   import {Component} from 'react'
 class Increment extends Component{
     constructor(){
         super()
@@ -62,3 +69,35 @@ increaseDislike= () =>{
  }
 }
 export default Increment
+*/
+import {Component} from 'react';
+import Head from 'next/head'
+class Toggle extends Component{
+    constructor(){
+        super()
+        this.state={
+            isON: false
+        }}
+
+       
+click = ()=>{
+    this.setState({
+        isON: ! this.state.isON
+    })
+}
+
+render(){
+    return(
+        <div>
+                <Head>
+        <link rel="stylesheet" href="../static/style.css"/>
+    </Head>
+        <button onClick={this.click}>Click here 
+        </button><br/>
+        {this.state.isON ?<img src="https://static.pexels.com/photos/14621/Warsaw-at-night-free-license-CC0.jpg" alt=""/> : 'Show Photo'}
+        <br/>That is how to brings animations in React js
+        </div>
+    )
+}
+}
+export default Toggle
